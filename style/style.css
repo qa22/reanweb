@@ -1,0 +1,299 @@
+:root {
+  --transition: all 0.3s ease;
+  --box-sd: 0 3px 5px rgba(0, 0, 0, 0.5);
+  --transform: scale(1.04);
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+/* =============================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom right, #ff6868, #ff8ddb);
+}
+::-webkit-scrollbar-thumb {
+  background: #9600ff;
+  border-radius: 50px;
+}
+/* =============================== */
+body {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 1.2rem;
+}
+.container {
+  margin: auto;
+  width: 90%;
+  max-width: 900px;
+}
+header {
+  width: 100%;
+}
+.box {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: rgb(128, 86, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box h1 {
+  pointer-events: none;
+  color: white;
+}
+.box h1::selection {
+  color: darkblue;
+  background-color: cornflowerblue;
+}
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+}
+nav ul li a {
+  color: antiquewhite;
+  display: block;
+  padding: 10px 20px;
+  transition: var(--transition);
+}
+nav ul li a:hover {
+  background-color: blueviolet;
+}
+
+nav ul .on_page {
+  background-color: rgba(137, 43, 226, 0.473);
+}
+/* ----------> section <---------- */
+section {
+  margin-top: 3rem;
+}
+section .ctn_page {
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  background-color: rgba(129, 129, 129, 0.151);
+}
+section .ctn_page .img_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+section .ctn_page .img_box img {
+  border-radius: 5px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+/* ----------> Logo <---------- */
+.logo {
+  margin-top: 3em;
+  width: 100%;
+}
+.logo .card {
+  margin: 0 auto;
+  width: 90%;
+  /* height: 400px; */
+}
+.logo .card .cover {
+  border-radius: 15%;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/icon.png");
+  background-position: center;
+  background-size: 100%;
+  object-fit: cover;
+}
+.logo .card .bio {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+.logo .card .bio h2 {
+  font-size: 1.8rem;
+  color: pink;
+}
+.logo .card .media {
+  margin: 3em auto;
+  width: 90%;
+}
+.logo .card .media ul {
+  margin: auto;
+  width: 300px;
+}
+.logo .card .media ul li {
+  text-align: center;
+}
+.logo .card .media ul li:nth-child(2) {
+  margin: 1.5rem 0;
+}
+.logo .card .media ul li a {
+  display: block;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 1.4em;
+  background-color: pink;
+  transition: var(--transition);
+}
+.logo .card .media ul li a:hover {
+  color: rgb(93, 204, 255);
+  transform: var(--transform);
+  background-color: rgb(255, 221, 227);
+}
+footer {
+  margin-top: 5em;
+  border-top: 15px solid chocolate;
+  width: 100%;
+}
+/* ----------> RESPORNSIVE <---------- */
+@media screen and (max-width: 700px) {
+  .container {
+    margin: auto;
+    width: 100%;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  nav ul {
+    display: flex;
+  }
+  section .ctn_page {
+    margin: auto;
+    width: 95%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    max-width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+  header .box {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(128, 86, 86);
+  }
+  header .box h1 {
+    font-size: 1.8em;
+    color: white;
+  }
+  nav ul {
+    display: flex;
+  }
+  nav ul li a {
+    display: block;
+    padding: 8px 15px;
+  }
+  nav ul li a:hover {
+    background-color: blueviolet;
+  }
+  nav .media {
+    display: none;
+  }
+  section {
+    margin: 3em auto;
+    width: 95%;
+  }
+  section .ctn_page {
+    margin: auto;
+    width: 95%;
+    background-color: rgba(129, 129, 129, 0.151);
+  }
+  /* ----------> Logo <---------- */
+  .logo .card {
+    width: 100%;
+    height: 500px;
+  }
+  .logo .card .cover {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.2em;
+  }
+  .logo .card .media {
+    margin: 2em auto;
+    width: 280px;
+  }
+  .logo .card .media ul {
+    width: 100%;
+    margin: auto;
+  }
+  .logo .card .media ul li {
+    padding: 10px 0;
+  }
+  .logo .card .media ul li a {
+    font-size: 1.3em;
+  }
+  .logo .card .media ul li:nth-child(2) {
+    margin: 0;
+  }
+  .logo .card .bio h2 {
+    font-size: 1.8rem;
+  }
+  footer {
+    margin-top: 3em;
+    border-top: 10px solid chocolate;
+  }
+  footer .box h1 {
+    font-size: 1.5em;
+  }
+  /* ================== ABOUT ================= */
+  .about_class h1 {
+    font-size: 1em;
+    margin-bottom: 0.3em;
+  }
+  .about_class h2 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+
+.about_class {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+}
+.about_class h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.about_class h2 {
+  padding: 0 0.3rem;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.about_class h3 {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 1em;
+}
+.about_class .about_text {
+  padding: 0 2em;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+.about_class .about_text .abt_clr {
+  color: #ff6868;
+}
